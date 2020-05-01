@@ -1,0 +1,85 @@
+{
+	"invocation": "salesforce app",
+	"intents": [
+		{
+			"name": "HelpIntent",
+			"phrases": [
+				"hello",
+				"say hello",
+				"say hello world"
+			]
+		},
+		{
+			"name": "GetPhoneNumberOfAccountIntent",
+			"phrases": [
+				"get me the phone number of {name}",
+				"get me the phone number {name}",
+				"get me the phone of {name}",
+				"get me the number of {name}",
+				"get me phone number of {name}",
+				"get me phone number {name}",
+				"get me phone of {name}",
+				"get me number of {name}",
+				"get phone number of {name}",
+				"get phone number {name}",
+				"get phone of {name}",
+				"get number of {name}",
+				"get number {name}",				
+				"get phone {name}",				
+				"number of {name}",
+				"phone of {name}",
+				"number {name}",
+				"phone {name}"
+			],
+			"inputs": [
+				{
+					"name": "name",
+					"type": {
+						"alexa": "AMAZON.Person",
+						"dialogflow": "@sys.person"
+					}
+				}
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			}
+		]
+	}
+}
